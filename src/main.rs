@@ -1,4 +1,4 @@
-use leptos::{component, create_signal, mount_to_body, view, IntoView, ReadSignal, SignalUpdate};
+use leptos::{component, create_signal, mount_to_body, view, IntoView, ReadSignal, Signal, SignalGet, SignalUpdate};
 
 fn main() {
     console_error_panic_hook::set_once();
@@ -12,6 +12,8 @@ fn main() {
 #[component]
 fn App() -> impl IntoView {
     let (count, set_count) = create_signal(0);
+    let double_count = move || count.get() * 2;
+
     view! {
         <button
             on:click=move |_| {
@@ -21,14 +23,17 @@ fn App() -> impl IntoView {
             "Click me"
         </button>
         <ProgressBar progress=count/>
+        <ProgressBar progress=Signal::derive(double_count)/>
     }
 }
 
+/// A progress bar component.
 #[component]
 fn ProgressBar(
-    progress: ReadSignal<i32>,
-    #[prop(default = 100)]
-    max: u16,
+    /// The maximum value of the progress bar.
+    #[prop(default = 100)] max: u16,
+    /// The current progress value.
+    #[prop(into)] progress: Signal<i32>,
 ) -> impl IntoView {
     view! {
         <progress
