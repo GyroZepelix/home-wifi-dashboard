@@ -11,17 +11,23 @@ fn main() {
 
 #[component]
 fn App() -> impl IntoView {
-    let (count, set_count) = create_signal(0);
-
+    let (x, set_x) = create_signal(0);
     view! {
         <button
             on:click=move |_| {
-                set_count.update(|n| *n += 1);
+                set_x.update(|n| *n += 10);
             }
-            class:red=move || count.get() % 2 == 1
+            style:left=move || format!("{}px", x.get() + 100)
+            style="position: absolute"
+            style:background-color=move || format!("rgb({}, {}, 100)", x.get(), 100)
+            style:max-width="400px"
+            style=("--columns", x)
         >
-            "Click me: "
-            {count}
+            "Click to Move"
         </button>
+        <progress
+            max="50"
+            value=x
+        />
     }
 }
