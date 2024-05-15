@@ -1,6 +1,5 @@
 use leptos::{
-    component, create_signal, mount_to_body, svg::view, view, CollectView, IntoView, ReadSignal,
-    Signal, SignalGet, SignalUpdate,
+    component, create_signal, mount_to_body, view, CollectView, IntoView, Signal, SignalGet, SignalUpdate,
 };
 
 fn main() {
@@ -49,8 +48,13 @@ fn ProgressBar(
     }
 }
 
+/// A list of counters, without the ability
+/// to add or remove any.
 #[component]
-fn StaticIteratorComponent(#[prop(default = 5)] lenght: u16) -> impl IntoView {
+fn StaticIteratorComponent(
+    /// How many counters to display.
+    #[prop(default = 5)] lenght: u16
+) -> impl IntoView {
     let counters = (1..=lenght).map(|idx| create_signal(idx));
 
     let counter_buttons = counters
@@ -71,3 +75,5 @@ fn StaticIteratorComponent(#[prop(default = 5)] lenght: u16) -> impl IntoView {
         <ul>{counter_buttons}</ul>
     }
 }
+
+
