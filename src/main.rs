@@ -1,7 +1,5 @@
 use components::app::App;
-use leptos::
-    mount_to_body
-;
+use leptos::mount_to_body;
 
 pub mod components;
 

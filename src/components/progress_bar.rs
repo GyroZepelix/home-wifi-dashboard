@@ -2,7 +2,7 @@ use leptos::{component, view, IntoView, Signal};
 
 /// A progress bar component.
 #[component]
-fn ProgressBar(
+pub fn ProgressBar(
     /// The maximum value of the progress bar.
     #[prop(default = 100)]
     max: u16,

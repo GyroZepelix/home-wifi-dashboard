@@ -1,6 +1,6 @@
 use leptos::{component, create_signal, view, IntoView, Signal, SignalGet, SignalUpdate};
 
-use crate::{ProgressBar, StaticIteratorComponent, DynamicIteratorComponent};
+use crate::components::{iterator_components::{DynamicIteratorComponent, StaticIteratorComponent}, progress_bar::ProgressBar};
 
 #[component]
 pub fn App() -> impl IntoView {

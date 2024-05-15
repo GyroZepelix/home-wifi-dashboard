@@ -23,7 +23,7 @@ fn Counter(
 /// A list of counters, without the ability
 /// to add or remove any.
 #[component]
-fn StaticIteratorComponent(
+pub fn StaticIteratorComponent(
     /// How many counters to display.
     #[prop(default = 5)] lenght: u16
 ) -> impl IntoView {
@@ -46,7 +46,7 @@ fn StaticIteratorComponent(
 
 /// A list of counters that allows you to add or remove counters.
 #[component]
-fn DynamicIteratorComponent(
+pub fn DynamicIteratorComponent(
     /// The number of counters to begin with
     initial_lenght: u16,
 ) -> impl IntoView {
