@@ -1,6 +1,6 @@
 use leptos::{component, create_signal, view, IntoView, Signal, SignalGet, SignalUpdate};
 
-use crate::{ProgressBar, StaticIteratorComponent};
+use crate::{ProgressBar, StaticIteratorComponent, DynamicIteratorComponent};
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -19,7 +19,7 @@ pub fn App() -> impl IntoView {
         <ProgressBar progress=Signal::derive(double_count)/>
         <StaticIteratorComponent/>
         <br/>
-        <DynamicIteratorComponent initial_lenght=3/>
+        <DynamicIteratorComponent initial_lenght=3 />
     }
 }
 

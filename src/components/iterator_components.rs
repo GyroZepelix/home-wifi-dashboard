@@ -1,7 +1,5 @@
 use leptos::{component, create_signal, view, CollectView, For, IntoView, Signal, SignalGet as _, SignalUpdate, WriteSignal};
 
-
-
 #[component]
 /// A simple counter component.
 fn Counter(
