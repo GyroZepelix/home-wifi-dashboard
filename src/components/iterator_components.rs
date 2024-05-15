@@ -1,37 +1,14 @@
-use components::app::App;
-use leptos::{
-    component, create_signal, mount_to_body, view, CollectView, For, IntoView, Signal, SignalGet, SignalUpdate, WriteSignal
-};
+use leptos::{component, create_signal, view, CollectView, For, IntoView, Signal, SignalGet as _, SignalUpdate, WriteSignal};
 
-pub mod components;
 
-fn main() {
-    console_error_panic_hook::set_once();
-    mount_to_body(App);
-}
-
-/// A progress bar component.
-#[component]
-fn ProgressBar(
-    /// The maximum value of the progress bar.
-    #[prop(default = 100)]
-    max: u16,
-    /// The current progress value.
-    #[prop(into)]
-    progress: Signal<i32>,
-) -> impl IntoView {
-    view! {
-        <progress
-            max=max
-            value=progress
-        />
-    }
-}
 
 #[component]
+/// A simple counter component.
 fn Counter(
+    /// The current count.
     #[prop(into)]
     count: Signal<u16>,
+    /// A signal to update the count.
     set_count: WriteSignal<u16>,
 ) -> impl IntoView {
     view! {
