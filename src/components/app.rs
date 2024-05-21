@@ -30,6 +30,7 @@ pub fn App() -> impl IntoView {
         <AdvancedControlFlow />
         <br />
         <NumericInput />
+        <br />
     }
 }
 
