@@ -25,7 +25,7 @@ pub fn AdvancedControlFlow() -> impl IntoView {
             when=move || { value.get() > 5 }
             fallback=|| view! { "Small" }
         >
-            "Big"
+            "Big" 
         </Show>
     }
 }
