@@ -1,6 +1,7 @@
 use leptos::{component, create_signal, ev::MouseEvent, provide_context, use_context, view, Callable, Callback, IntoView, SignalUpdate, WriteSignal};
 
 #[component]
+/// example container with Callback<I, O>
 pub fn ButtonAContainer() -> impl IntoView {
     let (toggled, set_toggled) = create_signal(false);
     view! {
@@ -21,6 +22,7 @@ pub fn ButtonA(#[prop(into)] on_click: Callback<MouseEvent>) -> impl IntoView
 
 
 #[component]
+/// Example container with passing a context
 pub fn ContextContainer() -> impl IntoView {
     let (toggled, set_toggled) = create_signal(false);
 
@@ -48,13 +50,13 @@ pub fn Layout() -> impl IntoView {
 pub fn Content() -> impl IntoView {
     view! {
         <div class="content">
-            <ButtonD/>
+            <ButtonA_2/>
         </div>
     }
 }
 
 #[component]
-pub fn ButtonD() -> impl IntoView {
+pub fn ButtonA_2() -> impl IntoView {
     let setter = use_context::<WriteSignal<bool>>()
         .expect("setter not provided");
 
