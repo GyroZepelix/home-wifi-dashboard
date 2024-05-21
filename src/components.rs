@@ -6,3 +6,4 @@ pub mod controlflow_components;
 pub mod error_handling_components;
 pub mod parent_child_coms_components;
 pub mod passing_children_components;
+pub mod view_builder_component;

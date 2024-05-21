@@ -1,6 +1,6 @@
 use leptos::{component, create_signal, view, IntoView, Signal, SignalGet, SignalUpdate};
 
-use crate::components::{controlflow_components::{AdvancedControlFlow, SimpleControlFlow}, error_handling_components::NumericInput, input_components::{FormInput, TextInput}, iterator_components::{AdvancedIterator, DynamicIteratorComponent, StaticIteratorComponent}, parent_child_coms_components::{ButtonAContainer, ContextContainer}, passing_children_components::{TakesChildren, WrapsChildren}, progress_bar::ProgressBar};
+use crate::components::{controlflow_components::{AdvancedControlFlow, SimpleControlFlow}, error_handling_components::NumericInput, input_components::{FormInput, TextInput}, iterator_components::{AdvancedIterator, DynamicIteratorComponent, StaticIteratorComponent}, parent_child_coms_components::{ButtonAContainer, ContextContainer}, passing_children_components::{TakesChildren, WrapsChildren}, progress_bar::ProgressBar, view_builder_component::MacrolessComponent};
 
 #[component]
 /// The root of the app
@@ -45,6 +45,7 @@ pub fn App() -> impl IntoView {
             "C"
         </WrapsChildren>
         <hr/>
+        <MacrolessComponent/>
     }
 }
 
