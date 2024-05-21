@@ -1,8 +1,9 @@
 use leptos::{component, create_signal, view, IntoView, Signal, SignalGet, SignalUpdate};
 
-use crate::components::{input_components::{FormInput, TextInput}, iterator_components::{AdvancedIterator, DynamicIteratorComponent, StaticIteratorComponent}, progress_bar::ProgressBar};
+use crate::components::{controlflow_components::SimpleControlFlow, input_components::{FormInput, TextInput}, iterator_components::{AdvancedIterator, DynamicIteratorComponent, StaticIteratorComponent}, progress_bar::ProgressBar};
 
 #[component]
+/// The root of the app
 pub fn App() -> impl IntoView {
     let (count, set_count) = create_signal(0);
     let double_count = move || count.get() * 2;
@@ -21,9 +22,12 @@ pub fn App() -> impl IntoView {
         <br/>
         <DynamicIteratorComponent initial_lenght=3 />
         <AdvancedIterator />
-        <TextInput />
         <br/>
+        <TextInput />
         <FormInput />
+        <br />
+        <SimpleControlFlow />
+
     }
 }
 
